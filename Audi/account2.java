@@ -2,7 +2,7 @@ class account2 {
 	private int accNo;
 	String accHolderName;
 	private float balance;
-	int transactions;
+	private int transactions;
 	float balanceAmt;
 	account2(int accNumber,String accHolderName,float bal,int transactions){
 		this.accNo = accNumber;
