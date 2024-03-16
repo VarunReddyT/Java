@@ -26,7 +26,7 @@ class account2 {
 	}
 	float getbalance(){
 		System.out.print("Balance : ");
-		balanceAmt = balance
+		balanceAmt = balance;
 		return balanceAmt;
 	}
 	void welcome(){
