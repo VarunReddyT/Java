@@ -3,6 +3,7 @@ class account2 {
 	String accHolderName;
 	private float balance;
 	int transactions;
+	int balanceAmt;
 	account2(int accNumber,String accHolderName,float bal,int transactions){
 		this.accNo = accNumber;
 		this.accHolderName = accHolderName;
@@ -25,7 +26,8 @@ class account2 {
 	}
 	float getbalance(){
 		System.out.print("Balance : ");
-		return balance;
+		balanceAmt = balance
+		return balanceAmt;
 	}
 	void welcome(){
 		System.out.println("Welcome to the bank, " + this.accHolderName);
