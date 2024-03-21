@@ -36,15 +36,27 @@ class account{
 	int getTransacions(){
 		return transactions;
 	}
+	boolean transfer(account b, float amt){
+		if(amt > balance){
+			System.out.println("Low Balance");
+			return false;
+		}
+		this.balance = balance - amt;
+		b.balance = b.balance + amt;
+		System.out.println("Transferred " + amt);
+		transactions++;
+		return true;
+	}
 }
 public class bank3 {
     public static void main(String[] args){
 		Scanner obj = new Scanner(System.in);
 		account a = new account(96184,"Varun Reddy",0,0);
+		account b = new account(96185,"KMIT",0,0);
 		a.welcome();
 		boolean flag = true;
 		while(flag){
-			System.out.println("Enter 1 for deposit, 2 for withdraw, 3 to check balance, 4 to check number of transactions, 5 to exit");
+			System.out.println("Enter 1 for deposit, 2 for withdraw, 3 to check balance, 4 to check number of transactions, 5 to transfer, 6 to exit");
 			int choice = obj.nextInt();
 			switch(choice){
 				case 1:
@@ -65,6 +77,11 @@ public class bank3 {
 					System.out.println(a.getTransacions());
 					break;
 				case 5:
+					System.out.print("Enter the amount to transfer : ");
+					float transferAmt = obj.nextFloat();
+					System.out.println(a.transfer(b,transferAmt));
+					break;
+				case 6:
 					flag = false;
 					break;
 				default:
