@@ -38,10 +38,13 @@ public class bank{
 		System.out.println("Enter the deposit amount : ");
 		float depositAmt = obj.nextFloat();
 		a.deposit(depositAmt);
+
 		System.out.println(a.getbalance());
+
 		System.out.println("Enter the withdraw amount : ");
 		float withdrawAmt = obj.nextFloat();
 		a.withdraw(withdrawAmt);
+		
 		System.out.println(a.getbalance());
 
 		obj.close();
