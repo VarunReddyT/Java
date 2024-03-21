@@ -44,7 +44,7 @@ public class bank{
 		System.out.println("Enter the withdraw amount : ");
 		float withdrawAmt = obj.nextFloat();
 		a.withdraw(withdrawAmt);
-		
+
 		System.out.println(a.getbalance());
 
 		obj.close();
