@@ -4,7 +4,7 @@ class Student extends Person {
     int year;
     int[] currentYearGrades;
     float cgpa;
-    Student(String name, int age, String gender, String section, String department, int year, int[] currentYearGrades){
+    Student(String name, int age, String gender, String section, String department, int year,int[] currentYearGrades){
         this.name = name;
         this.age =age;
         this.gender = gender;
