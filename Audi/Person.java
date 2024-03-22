@@ -18,13 +18,11 @@ public class Person {
         }
     }
     public static void main(String[] args) {
-        int[] a = {90,80,70,90};
-        int[] b = {60,80,70,34};
-        int[] c = {60,85,30,34};
+        
         Person p = new Person();
-        Student s = new Student("Varun Reddy",22,"Male","A","CSE",4,a);
-        Student s1 = new Student("Bob",22,"Male","C","IT",4,b);
-        Student s2 = new Student("Chinnu",22,"Male","D","CSM",2,c);
+        Student s = new Student("Varun Reddy",22,"Male","A","CSE",4,new int[]{90,80,70,90});
+        Student s1 = new Student("Bob",22,"Male","C","IT",4,new int[]{60,80,70,34});
+        Student s2 = new Student("Chinnu",22,"Male","D","CSM",2,new int[]{60,85,30,34});
         p.applyForPostGraduation(s);
         p.applyForPostGraduation(s1);
         p.applyForPostGraduation(s2);
