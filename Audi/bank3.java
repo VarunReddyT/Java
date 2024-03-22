@@ -31,7 +31,7 @@ class account{
 		return balanceAmt;
 	}
 	void welcome(){
-		System.out.println("Welcome to the bank, " + this.accHolderName);
+		System.out.println("Welcome to the bank, " + this.accHolderName + ". Bank ante temple.");
 	}
 	int getTransacions(){
 		return transactions;
