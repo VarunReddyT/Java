@@ -1,15 +1,27 @@
 class Student extends Person {
     String section;
     String department;
+    int year;
     int[] currentYearGrades;
     float cgpa;
-    void calculatePercentage(int[] currentYearGrades){
+    Student(String name, int age, String gender, String section, String department, int year, int[] currentYearGrades){
+        this.name = name;
+        this.age =age;
+        this.gender = gender;
+        this.section = section;
+        this.department = department;
+        this.year = year;
+        this.currentYearGrades = currentYearGrades;
+        this.cgpa = calculateCGPA(currentYearGrades);
+    }
+    float calculateCGPA(int[] currentYearGrades){
         int sum = 0;
         for(int i = 0; i < currentYearGrades.length; i++){
             sum += currentYearGrades[i];
         }
         float percentage = ((sum*100) / (currentYearGrades.length * 100));
-        System.out.println("Percentage : " + percentage);
+        float finalcgpa = (percentage / 9.5f);
+        return finalcgpa;
     }
 }
 
