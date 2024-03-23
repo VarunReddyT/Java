@@ -2,19 +2,19 @@ class ScholarshipStudent extends Student{
     private boolean isEligible;
 
     // Constructor
-    public ScholarshipStudent(String name, int age, String gender, double weight, String nationality, int year, char section, double cgpa, int[] noOfGrades) {
+    public ScholarshipStudent(String name, int age, String gender, double weight, String nationality, int year, char section, double cgpa, int[] noOfGrades,boolean isPaid) {
         super(name, age, gender, weight, nationality, year, section, cgpa, noOfGrades);
-        this.isEligible = checkEligibilityForScholarship(cgpa);
+        this.isEligible = checkEligibilityForScholarship(cgpa,nationality);
     }
 
     // Method to check eligibility for scholarship
-    private boolean checkEligibilityForScholarship(double cgpa) {
-        return cgpa > 9.0;
+    private boolean checkEligibilityForScholarship(double cgpa,String nationality) {
+        return cgpa > 9.0 && (nationality.equalsIgnoreCase("Indian"));
     }
 
     // Setter for isEligible attribute
     public void setEligible(boolean isEligible) {
-        if (isEligible && checkEligibilityForScholarship(getCgpa())) {
+        if (isEligible && checkEligibilityForScholarship(getCgpa(),getNationality())){
             this.isEligible = true;
         } else {
             this.isEligible = false;
@@ -25,7 +25,7 @@ class ScholarshipStudent extends Student{
     public boolean isEligible() {
         return isEligible;
     }
-
+    
 }
 /*Renewal of Scholarship: Implement a method to renew the scholarship annually based on certain criteria like maintaining a minimum GPA or fulfilling specific academic requirements.
 

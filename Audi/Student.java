@@ -4,6 +4,7 @@ public class Student extends Person {
     private double cgpa;
     private int[] noOfGrades;
     private double fees;
+    private boolean isPaid;
 
     // Instance initializer
     {
@@ -19,6 +20,7 @@ public class Student extends Person {
         this.cgpa = cgpa;
         this.noOfGrades = noOfGrades;
         this.fees = calculateFees(year);
+        this.isPaid = false;
     }
 
     // Method to calculate fees based on the year
@@ -74,6 +76,16 @@ public class Student extends Person {
     }
     public double getCgpa() {
         return cgpa;
+    }
+
+    public void payFees(int amt){
+        if(amt >= fees){
+            isPaid = true;
+            System.out.println("Fees paid successfully");
+        } else {
+            isPaid = false;
+            System.out.println("Insufficient amount. Please pay the full fees.");
+        }
     }
 
     // Override canVote method
