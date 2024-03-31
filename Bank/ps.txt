@@ -1,0 +1,14 @@
+As such in a Bank there is no Account , it is either a savings account or a current account, create a bank management system where a customer can open a bank account based on his need current or savings. 
+Current Account:
+A current account is primarily used by businesses, companies, and individuals for managing day-to-day financial transactions.
+It typically offers features such as unlimited transactions, overdraft facilities, checkbook facilities, and online banking services.
+Current accounts usually do not pay any interest on the deposited amount.
+These accounts may require a higher minimum balance to be maintained compared to savings accounts.
+They are suited for frequent transactions, payments, and withdrawals.
+Savings Account:
+
+A savings account is designed for individuals to save money and earn interest on their deposits.
+It usually has limitations on the number of transactions allowed per month, but it provides interest on the deposited amount.
+Savings accounts often come with features like ATM/debit cards, online banking, and mobile banking facilities.
+They generally have a lower minimum balance requirement compared to current accounts.
+Savings accounts are suitable for individuals who want to save money for short-term or long-term goals while earning interest on their deposits.
