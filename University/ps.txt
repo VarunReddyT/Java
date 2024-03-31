@@ -1,0 +1,12 @@
+Create a university management system where you have scholarship students and normal students , every student should be able to calculate his CGPA and can apply for PostGraduation only if he is in 4th year and have more than 8.0 CGPA. A student is eligible for scholarship only if his CGPA is more than 9.0 . The student should be able to pay the fees based on his academic year , the fees would be half for scholarship students. 
+Election is around the corner we will make sure all students who have paid fees and have indian nationailty are allowed to vote. 
+Create a system where you can create 3 scholarship students 
+1. Pragnya - Indian - 3rd year , 8.9 current CGPA 
+2. Sameul - African - 2nd year , 7.2 current CGPA 
+3. Tikku - Indian - 4th year , 9.2 current CGPA
+ and 3 students of the following details 
+1. pankaj  - indonesian , 4 , 8.8
+2. jim - Canadian , 3rd , 8.9 
+3. Seema - Indian , 4 , 9.9
+
+Check if these students can Vote or not and in case they cant so ask them to pay their due fees and make them vote
