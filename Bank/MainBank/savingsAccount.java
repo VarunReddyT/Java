@@ -1,34 +1,30 @@
+
 import java.util.Scanner;
 
-public class currentAccount {
-	private int accNo;
+public class savingsAccount {
+    private int accNo;
 	String accHolderName;
 	private float balance;
 	private int transactions;
-	private float salary;
-	private float overdraftLimit;
 	float balanceAmt;
 	boolean lowMinBalance = false;
-	boolean overdraft = false;
 	Scanner scanner;
-	currentAccount(int accNumber, String accHolderName, float bal, int transactions, float salary, Scanner scanner) {
+	savingsAccount(int accNumber, String accHolderName, float bal, int transactions,Scanner scanner) {
 		this.accNo = accNumber;
 		this.accHolderName = accHolderName;
 		this.balance = bal;
 		this.transactions = transactions;
-		this.salary = salary;
-		this.overdraftLimit = 2*salary;
 		this.scanner = scanner;
 	}
 
 	boolean start(){
-		System.out.println("Mimimum balance to be maintained is 10000");
-		System.out.println("Enter 1 to continue to pay 10000, 2 to exit");
+		System.out.println("Minimum balance to be maintained is 1500");
+		System.out.println("Enter 1 to continue to pay 1500, 2 to exit");
 		int choice;
 		choice = scanner.nextInt();
 		if(choice == 1){
 			System.out.println("Account created successfully");
-			this.balance = 10000;
+			this.balance = 1500;
 			return true;
 		}
 		else{
@@ -37,14 +33,6 @@ public class currentAccount {
 		
 	}
 	void withdraw(float amt) {
-		if(balance-amt < -overdraftLimit && overdraft){
-			System.out.println("Low Balance, cannot withdraw more as per overdraft rules");
-			lowMinBalance = true;
-			return;
-		}
-		else if(balance-amt < -overdraftLimit && !overdraft){
-			lowMinBalance = false;
-		}
 		if (amt > balance) {
 			System.out.println("Low Balance");
 			return;
@@ -52,8 +40,12 @@ public class currentAccount {
 		this.balance = balance - amt;
 		System.out.println("Withdrawn " + amt);
 		transactions++;
-		if(balance < 10000){
-			System.out.println("Low Balance. Please maintain minimum balance of 10000");
+		if(balance < 0){
+			System.out.println("Zero Balance");
+			lowMinBalance = true;
+		}
+		else if(balance < 1500){
+			System.out.println("Low Balance. Please maintain minimum balance of 1500");
 			lowMinBalance = true;
 		}
 		else{
@@ -65,11 +57,8 @@ public class currentAccount {
 		this.balance = balance + amt;
 		System.out.println("Deposited " + amt);
 		transactions++;
-		if(balance < -overdraftLimit && overdraft){
-			lowMinBalance = true;
-		}
-		else if(balance < 10000 && !overdraft){
-			System.out.println("Low Balance Please maintain minimum balance of 10000");
+		if(balance < 1500){
+			System.out.println("Low Balance. Please maintain minimum balance of 1500");
 			lowMinBalance = true;
 		}
 		else{
@@ -88,19 +77,10 @@ public class currentAccount {
 	}
 
 	int getTransactions() {
-		System.out.print("Number of Transactions : ");
 		return transactions;
 	}
 
-	void transfer(currentAccount b, float amt) {
-		if(balance-amt < -overdraftLimit){
-			System.out.println("Low Balance, cannot transfer more as per overdraft rules");
-			lowMinBalance = true;
-			return;
-		}
-		else{
-			lowMinBalance = false;
-		}
+	void transfer(savingsAccount b, float amt) {
 		if (amt > balance) {
 			System.out.println("Low Balance");
 			return;
@@ -109,8 +89,12 @@ public class currentAccount {
 		b.balance = b.balance + amt;
 		System.out.println("Transferred " + amt);
 		transactions++;
-		if(balance < 10000){
-			System.out.println("Low Balance");
+		if(balance < 0){
+			System.out.println("Zero Balance");
+			lowMinBalance = true;
+		}
+		else if(balance < 1500){
+			System.out.println("Low Balance. Please maintain minimum balance of 1500");
 			lowMinBalance = true;
 		}
 		else{
@@ -118,14 +102,14 @@ public class currentAccount {
 		}
 	}
 
-	void checkbook() {
-		System.out.println("Checkbook facility available");
-		System.out.println("Enter 1 to aplly for a new checkbook, 2 to cancel");
+	void mobileBanking() {
+		System.out.println("Mobile banking facility available");
+		System.out.println("Enter 1 to register for mobile banking, 2 to cancel");
 		int choice = scanner.nextInt();
 		if (choice == 1) {
-			System.out.println("Application for checkbook submitted successfully");
+			System.out.println("Mobile banking registered successfully. Login credentials will be sent to your registered mobile number. For more details, login to your account on the bank's mobile app");
 		} else {
-			System.out.println("Checkbook application cancelled");
+			System.out.println("Mobile banking registration cancelled");
 		}
 	}
 
@@ -148,19 +132,6 @@ public class currentAccount {
 			System.out.println("Online banking registered successfully. Login credentials will be sent to your registered mobile number. For more details, login to your account on the bank's mobile app");
 		} else {
 			System.out.println("Online banking registration cancelled");
-		}
-	}
-
-	void overdraft(){
-		System.out.println("Overdraft facility available");
-		System.out.println("Enter 1 to apply for overdraft, 2 to cancel");
-		int choice = scanner.nextInt();
-		if (choice == 1) {
-			System.out.println("Overdraft applied successfully. Overdraft limit is " + overdraftLimit + ". Overdraft charges are 12% per month.");
-			overdraft = true;
-		} else {
-			System.out.println("Overdraft application cancelled");
-			overdraft = false;
 		}
 	}
 }

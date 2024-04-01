@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 class account {
 	private int accNo;

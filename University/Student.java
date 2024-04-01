@@ -21,6 +21,7 @@ public class Student extends Person {
         this.noOfGrades = noOfGrades;
         this.fees = calculateFees(year);
         this.isPaid = false;
+        this.section = section;
     }
 
     // Method to calculate fees based on the year
@@ -39,25 +40,21 @@ public class Student extends Person {
         }
     }
 
-    // Method to calculate percentage and update CGPA
     public void calculatePercentage() {
         int totalGrades = 0;
         int totalPoints = 0;
-
-        // Calculate total number of grades and total points
+   
         for (int grade : noOfGrades) {
             totalGrades += 1;
-            totalPoints += grade * 10; // Assuming each grade contributes 10 points to the CGPA
+            totalPoints += grade * 10;
         }
 
-        // Calculate updated CGPA
-        double updatedCgpa = (double) totalPoints / (totalGrades * 10); // Normalize to 10 scale
+        double updatedCgpa = (double) totalPoints / (totalGrades * 10); 
 
-        // Update cgpa instance variable
         this.cgpa = updatedCgpa;
     }
 
-    // Method to check eligibility for applying to postgraduate program
+
     public boolean applyForPostGraduate() {
         if (year == 4 && cgpa > 8.0) {
             return true;
@@ -65,12 +62,10 @@ public class Student extends Person {
         return false;
     }
 
-    // Getter method for fees
     public double getFees() {
         return fees;
     }
 
-    // Setter method for fees
     public void setFees(double fees) {
         this.fees = fees;
     }
