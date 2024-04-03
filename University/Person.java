@@ -25,11 +25,13 @@ public class Person {
     }
 
     // Method to check if the person can vote
-    public void canVote() {
-        if (age >= 18 && nationality.equalsIgnoreCase("Indian")) {
+    public void canVote(double fee) {
+
+        if (age >= 18 && nationality.equalsIgnoreCase("Indian") && fee <= 0) {
             System.out.println(name + " can vote.");
         } else {
             System.out.println(name + " cannot vote.");
+            
         }
     }
 
@@ -80,12 +82,12 @@ public class Person {
         Person person1 = new Person("John", 25, "Male", 70.5, "Indian");
         Person person2 = new Person("Alice", 16, "Female", 55.0, "American");
 
-        person1.canTalk();
-        person1.canWalk();
-        person1.canVote();
+        // person1.canTalk();
+        // person1.canWalk();
+        // person1.canVote();
 
-        person2.canTalk();
-        person2.canWalk();
-        person2.canVote();
+        // person2.canTalk();
+        // person2.canWalk();
+        // person2.canVote();
     }
 }

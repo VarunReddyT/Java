@@ -32,9 +32,9 @@ public class Student extends Person {
             case 2:
                 return 30000;
             case 3:
-                return 40000;
-            case 4:
                 return 35000;
+            case 4:
+                return 40000;
             default:
                 return 0; // No fees for other years
         }
@@ -73,21 +73,20 @@ public class Student extends Person {
         return cgpa;
     }
 
-    public void payFees(int amt){
-        if(amt >= fees){
-            isPaid = true;
-            System.out.println("Fees paid successfully");
+    public void payFees(double amount) {
+        this.fees -= amount;
+        if (fees <= 0) {
+            System.out.println("Fees paid successfully.");
         } else {
-            isPaid = false;
-            System.out.println("Insufficient amount. Please pay the full fees.");
+            System.out.println("Fees pending: " + fees);
         }
     }
 
     // Override canVote method
     @Override
-    public void canVote() {
+    public void canVote(double fee) {
         // Implement voting eligibility criteria specific to students if needed
         // For simplicity, let's keep the canVote method as it was before
-        super.canVote();
+        super.canVote(fee);
     }
 }
