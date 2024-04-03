@@ -31,7 +31,13 @@ class University{
         System.out.println("Nationality: " + student.getNationality());
         System.out.println("Age: " + student.getAge());
         student.canVote(fee);
-        System.out.println();
+        System.out.println("Year: " + student.getYear());
+        if(student.applyForPostGraduate()) {
+            System.out.println("Eligible for Post Graduation");
+        } else {
+            System.out.println("Not eligible for Post Graduation");
+        }
+        System.out.println("--------------------------------------------");
     }
 
     private static void studentScholarFunc(ScholarshipStudent student, Scanner scanner) {
@@ -56,7 +62,13 @@ class University{
         System.out.println();
         student.setEligible(false);
         System.out.println("Updated Eligibility for Scholarship: " + student.isEligible());
-        System.out.println();
+        System.out.println("Year: " + student.getYear());
+        if(student.applyForPostGraduate()) {
+            System.out.println("Eligible for Post Graduation");
+        } else {
+            System.out.println("Not eligible for Post Graduation");
+        }
+        System.out.println("--------------------------------------------");
     }
 
     public static void main(String[] args) {
@@ -64,19 +76,19 @@ class University{
         Scanner scanner = new Scanner(System.in);
         int[] PragnyaGrades = { 8, 9, 7 };
         ScholarshipStudent Pragnya = new ScholarshipStudent("Pragnya", 21, "Female", 55.0, "Indian", 3, 'B', 8.9,
-                PragnyaGrades, false);
+                PragnyaGrades);
         studentScholarFunc(Pragnya,scanner);
         
 
         int[] SameulGrades = { 9, 8, 9 };
         ScholarshipStudent Sameul = new ScholarshipStudent("Sameul", 20, "Male", 70.5, "African", 2, 'A', 7.2,
-                SameulGrades, false);
+                SameulGrades);
         studentScholarFunc(Sameul,scanner);
 
 
         int[] TikkuGrades = { 6, 8, 7 };
         ScholarshipStudent Tikku = new ScholarshipStudent("Tikku", 22, "Male", 60.5, "Indian", 4, 'A', 9.2,
-                TikkuGrades, false);
+                TikkuGrades);
         studentScholarFunc(Tikku,scanner);
 
 

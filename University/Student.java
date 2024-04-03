@@ -4,7 +4,6 @@ public class Student extends Person {
     private double cgpa;
     private int[] noOfGrades;
     private double fees;
-    private boolean isPaid;
 
     // Instance initializer
     {
@@ -20,7 +19,6 @@ public class Student extends Person {
         this.cgpa = cgpa;
         this.noOfGrades = noOfGrades;
         this.fees = calculateFees(year);
-        this.isPaid = false;
         this.section = section;
     }
 
@@ -62,6 +60,10 @@ public class Student extends Person {
         return false;
     }
 
+    public int getYear() {
+        return year;
+    }
+    
     public double getFees() {
         return fees;
     }

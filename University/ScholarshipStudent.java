@@ -4,7 +4,7 @@ class ScholarshipStudent extends Student {
 
     // Constructor
     public ScholarshipStudent(String name, int age, String gender, double weight, String nationality, int year,
-            char section, double cgpa, int[] noOfGrades, boolean isPaid) {
+            char section, double cgpa, int[] noOfGrades) {
         super(name, age, gender, weight, nationality, year, section, cgpa, noOfGrades);
         this.fees = calculateFees(year);
         this.isEligible = checkEligibilityForScholarship(cgpa, nationality);

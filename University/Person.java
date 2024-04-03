@@ -12,6 +12,7 @@ public class Person {
         this.gender = gender;
         this.weight = weight;
         this.nationality = nationality;
+        
     }
 
     // Method to check if the person can talk
