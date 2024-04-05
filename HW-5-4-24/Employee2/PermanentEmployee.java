@@ -3,13 +3,7 @@ public class PermanentEmployee extends Employee{
     private double basicPay;
     private double hra;
     private int experience;
-    PermanentEmployee(int empId, String name, double basicPay,double hra, int experience){
-        super(empId, name, 0);
-        setBasicPay(basicPay);
-        setHra(hra);
-        setExperience(experience);
-        calculateSalary();
-    }
+
     public double getBasicPay(){
         return basicPay;
     }

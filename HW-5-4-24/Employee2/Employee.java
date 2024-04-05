@@ -4,12 +4,6 @@ public class Employee{
     public String name;
     private double salary;
 
-    public Employee(int empId, String name, double salary){
-        setEmpId(empId);
-        setName(name);
-        setSalary(salary);
-    }
-
     public double getSalary(){
         return salary;
     }
@@ -29,10 +23,22 @@ public class Employee{
         this.name = name;
     }
     public static void main(String[] args) {
-        PermanentEmployee p1 = new PermanentEmployee(101, "Anil", 10000, 1500, 3);  // HRA - House Rent Allowance
-        ContractEmployee c1 = new ContractEmployee(2, "Ashok", 100, 10);
+        PermanentEmployee p1 = new PermanentEmployee();
+        p1.setName("Anil");
+        p1.setEmpId(101);
+        p1.setBasicPay(10000);
+        p1.setHra(1500);
+        p1.setExperience(3);
+        p1.calculateSalary();
 
         System.out.println("Permanent Employee - " + p1.getName() +" : Your salary is : " + p1.getSalary());
+        
+        ContractEmployee c1 = new ContractEmployee();
+        c1.setName("Ashok");
+        c1.setEmpId(102);
+        c1.setWages(100);
+        c1.setHours(10);
+        c1.calculateSalary();
         
         System.out.println("Contract Employee - " + c1.getName() + ": Your salary is : " + c1.getSalary());
 
