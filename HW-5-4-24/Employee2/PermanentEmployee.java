@@ -1,5 +1,5 @@
 
-public class PermanentEmployee extends EmployeeRecords{
+public class PermanentEmployee extends Employee{
     private double basicPay;
     private double hra;
     private int experience;

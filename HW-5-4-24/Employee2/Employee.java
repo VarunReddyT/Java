@@ -1,10 +1,10 @@
 // A construction company wants to keep a record of the employees working in it. There are permanent employees as well as contract employees. Contract employees work on an hourly basis whereas permanent employees are paid monthly salary. 
-public class EmployeeRecords{
+public class Employee{
     private int empId;
     public String name;
     private double salary;
 
-    public EmployeeRecords(int empId, String name, double salary){
+    public Employee(int empId, String name, double salary){
         setEmpId(empId);
         setName(name);
         setSalary(salary);

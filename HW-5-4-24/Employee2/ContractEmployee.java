@@ -1,5 +1,5 @@
 
-public class ContractEmployee extends EmployeeRecords{
+public class ContractEmployee extends Employee{
     private double wages;
     private int hours;
     ContractEmployee(int empId, String name, double wages, int hours){
