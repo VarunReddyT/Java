@@ -6,7 +6,7 @@ public class ContractEmployee extends Employee{
     public double getWages(){
         return wages;
     }
-    public void setWages(double wages){
+    public void setWages(double wages){ 
         this.wages = wages;
     }
     public int getHours(){
