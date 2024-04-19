@@ -1,0 +1,280 @@
+1.package pack1;
+ 
+class A
+{
+    protected static String s = "A";
+}
+ 
+class B extends A
+{
+     
+}
+ 
+class C extends B
+{   
+    static void methodOfC()
+    {
+        System.out.println(s);
+    }
+}
+ 
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        C.methodOfC();
+    }
+}
+
+What is the output for the above program?
+Options :
+A.Runtime error
+B.A
+C.Compilation error
+D.cannot access s
+
+
+
+2.
+
+package pack1;
+ 
+class X
+{
+    protected int i = 1221;
+     
+    void methodOfX()
+    {
+        System.out.println(i);
+    }
+}
+ 
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        X x = new X();
+         
+        System.out.println(x.i);
+         
+        x.methodOfX();
+    }
+}
+
+What is the output for the above program?
+Options :
+A.1221
+B.Compilation error followed by a runtime error
+C.1221 followed by 1221
+D.1221 followed by a compilation error
+
+
+
+3.
+
+package pack1;
+
+class A {
+    private int privateVar = 10;
+    int defaultVar = 20;
+    protected int protectedVar = 30;
+    public int publicVar = 40;
+
+    void display() {
+        System.out.println(privateVar + " " + defaultVar + " " + protectedVar + " " + publicVar);
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        A obj = new A();
+        obj.display();
+    }
+}
+
+What will be the output of the program?
+
+Options:
+
+A) 10 20 30 40
+B) Compilation error
+C) 0 20 30 40
+D) Runtime error
+
+
+
+
+
+
+4. 
+
+package pack1;
+
+class A {
+    protected static String s = "A";
+
+    static void display() {
+        System.out.println(s);
+    }
+}
+
+class B extends A {
+    protected static String s = "B";
+
+    static void display() {
+        System.out.println(s);
+    }
+}
+
+class C extends B {
+    static void methodOfC() {
+        System.out.println(A.s);
+        B.display();
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        C.methodOfC();
+    }
+}
+
+What will be the output of the program?
+
+Options:
+
+A) A
+B) B
+C) Compilation error
+D) A followed by B
+
+
+
+
+
+5.
+package pack1;
+
+class A {
+    private int privateVar = 10;
+    int defaultVar = 20;
+    protected int protectedVar = 30;
+    public int publicVar = 40;
+
+    void display() {
+        System.out.println(privateVar + " " + defaultVar + " " + protectedVar + " " + publicVar);
+    }
+
+    protected void changePrivateVar(int newValue) {
+        privateVar = newValue;
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        A obj = new A();
+        
+        obj.display();
+        
+        // Change the value of privateVar
+        obj.changePrivateVar(50);
+        
+        // Display the values again
+        obj.display();
+    }
+}
+
+What will be the output of the program?
+
+Options:
+
+A) 10 20 30 40
+50 20 30 40
+
+B) Compilation error
+
+C) 10 20 30 40
+10 20 30 40
+
+D) 10 20 30 40
+10 20 30 50
+
+
+
+
+6.
+package pack1;
+
+class A {
+    private int privateVar = 15;
+    int defaultVar = 25;
+    protected int protectedVar = 35;
+    public int publicVar = 45;
+
+    void display() {
+        System.out.println(privateVar + " " + defaultVar + " " + protectedVar + " " + publicVar);
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        A obj = new A();
+        obj.display();
+    }
+}
+
+
+What will be the output of the program?
+
+Options:
+
+A) Compilation error
+B) 15 25 35 45
+C) 0 25 35 45
+D) Runtime error
+
+
+7.
+package pack1;
+
+class A {
+    protected static String s = "A";
+
+    static void display() {
+        System.out.println(s);
+    }
+}
+
+class B extends A {
+    protected static String s = "B";
+
+    static void display() {
+        System.out.println(s);
+    }
+}
+
+class C extends B {
+    static void methodOfC() {
+        System.out.println(A.s);
+        B.display();
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        C.methodOfC();
+        System.out.println(B.s);
+        System.out.println(C.s); // Error: 's' has protected access in 'pack1.B'
+    }
+}
+
+
+What will be the output of the program?
+
+Options:
+
+A) Compilation error
+B) A
+C) B
+D) Runtime error
+
