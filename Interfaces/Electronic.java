@@ -25,10 +25,11 @@ public class Electronic {
     public static void main(String[] args) {
         Smartphone s1 = new Smartphone();
         Computer c1 = new Computer("Varun", 32, 2);
-
+        BluetoothInterface b = new Computer("Dull", 512, 1);
         s1.enableBluetooth();
         c1.powerOn();
         s1.powerOff();
+        b.enableBluetooth();
     }
 }
 
@@ -131,7 +132,7 @@ class Computer extends Electronic implements BluetoothInterface {
     @Override
     public void enableBluetooth() {
         bluetoothEnabled = true;
-        System.out.println("Bluetooth enabled.");
+        System.out.println("Bluetooth enabled. Cheers.");
     }
 
     @Override
