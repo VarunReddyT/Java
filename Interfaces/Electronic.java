@@ -27,6 +27,7 @@ public class Electronic {
         Computer c1 = new Computer("Varun", 32, 2);
 
         s1.enableBluetooth();
+        c1.powerOn();
     }
 }
 
