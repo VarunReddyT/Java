@@ -28,6 +28,7 @@ public class Electronic {
 
         s1.enableBluetooth();
         c1.powerOn();
+        s1.powerOff();
     }
 }
 
@@ -51,7 +52,7 @@ interface BluetoothInterface {
     byte[] receiveData();
 }
 
-class Smartphone implements BluetoothInterface {
+class Smartphone extends Electronic implements BluetoothInterface {
     private boolean bluetoothEnabled = false;
 
     @Override
