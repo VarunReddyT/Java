@@ -32,6 +32,7 @@ public class Electronic {
     }
 }
 
+
 interface BluetoothInterface {
     // Method to enable Bluetooth
     void enableBluetooth();
@@ -52,7 +53,7 @@ interface BluetoothInterface {
     byte[] receiveData();
 }
 
-class Smartphone extends Electronic implements BluetoothInterface {
+class Smartphone extends Electronic implements BluetoothInterface{
     private boolean bluetoothEnabled = false;
 
     @Override
