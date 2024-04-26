@@ -41,7 +41,6 @@ public class Electronic {
         h1.enableHotspot();
         h1.connectToHotspot("Varun");
 
-
     }
 }
 
@@ -207,6 +206,7 @@ class Smartphone extends Electronic implements Hotspot{
 class Computer extends Electronic implements Hotspot{
     private boolean hotspotEnabled = false;
 
+    
     @Override
     public void enableHotspot() {
         hotspotEnabled = true;
