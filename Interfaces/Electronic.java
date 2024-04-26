@@ -37,7 +37,7 @@ public class Electronic {
         b.enableBluetooth();
 
         System.out.println("\n");
-        
+
         h1.enableHotspot();
         h1.connectToHotspot("Varun");
 
@@ -67,7 +67,7 @@ interface BluetoothInterface {
 }
 
 
-interface Hotspot{
+interface Hotspot extends BluetoothInterface{
     // Method to enable hotspot
     void enableHotspot();
 
@@ -87,7 +87,7 @@ interface Hotspot{
     // Method to receive data from the connected device
     byte[] receiveDataH();
 }
-class Smartphone extends Electronic implements BluetoothInterface,Hotspot{
+class Smartphone extends Electronic implements Hotspot{
     private boolean hotspotEnabled = false;
 
     @Override
@@ -204,7 +204,7 @@ class Smartphone extends Electronic implements BluetoothInterface,Hotspot{
     }
 }
 
-class Computer extends Electronic implements BluetoothInterface,Hotspot{
+class Computer extends Electronic implements Hotspot{
     private boolean hotspotEnabled = false;
 
     @Override
