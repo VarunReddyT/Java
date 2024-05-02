@@ -2,21 +2,22 @@ import java.io.*;
 import java.util.Scanner;
 public class checkVoter {
     public static void main(String[] args) throws IOException{
-        File f = new File("//run//media//varun-msi//Local Disk//Programming//Java//Voters//Hyderabad");
-        f.mkdir();
-        File f2 = new File(f,"Voters.txt");
-        f2.createNewFile();
-        Scanner scanner = new Scanner(System.in);
+        File f1 = new File("//run//media//varun-msi//Local Disk//Programming//Java//Voters","AllVoters.csv");
+        File f2 = new File("//run//media//varun-msi//Local Disk//Programming//Java//Voters//Hyderabad","Voters.csv");
+        
+        FileReader f3 = new FileReader(f1);
+        BufferedReader br = new BufferedReader(f3);
+
         FileWriter fw = new FileWriter(f2);
-        for(int i = 0;i<5;i++){
-            String name = scanner.next();
-            int age = scanner.nextInt();
-            if(age<18){
-                System.out.println("You are below 18. Cannot vote !");
+
+        String data = br.readLine();
+        while(data != null){
+            String[] L = data.split(",");
+            if(Integer.parseInt(L[1])>=18){
+                System.out.println(L[0]);
+                fw.append(L[0]+","+L[1]+"\n");
             }
-            else{
-                fw.append(name+" "+age+"\n");
-            }
+            data = br.readLine();
         }
         fw.close();
     }
