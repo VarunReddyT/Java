@@ -11,8 +11,8 @@ public class checkVoter {
         for(int i = 0;i<5;i++){
             String name = scanner.next();
             int age = scanner.nextInt();
-            if(age<=60){
-                System.out.println("You are below 60. Cannot vote !");
+            if(age<18){
+                System.out.println("You are below 18. Cannot vote !");
             }
             else{
                 fw.append(name+" "+age+"\n");
