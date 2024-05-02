@@ -1,5 +1,5 @@
 import java.io.*;
-public class ReadFile16{
+public class OutputFile16{
     public static void main(String[] args) throws IOException {
         File f = new File("sample1.txt");
         f.createNewFile();
