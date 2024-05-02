@@ -6,5 +6,6 @@ public class ReadFile17 {
         while((data = f.read()) != -1){
             System.out.println((char)data);
         }
+        f.close();
     }
 }
