@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class ProductManager{
     private List<Product> products = new ArrayList<>();
     
-    void addProduct(Product product) {
+    public void addProduct(Product product) {
         products.add(product);
     }
-    void editProduct(int id, String name, String category) {
+    public void editProduct(int id, String name, String category) {
         for (Product product : products) {
             if (product.getId() == id) {
                 product.setName(name);
@@ -17,7 +17,7 @@ public class ProductManager{
             }
         }
     }
-    void deleteProduct(int id) {
+    public void deleteProduct(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
                 products.remove(product);
@@ -25,7 +25,7 @@ public class ProductManager{
             }
         }
     }
-    void modifyRating(int id, double rating) {
+    public void modifyRating(int id, double rating) {
         for (Product product : products) {
             if (product.getId() == id) {
                 product.setRating(rating);
@@ -33,10 +33,10 @@ public class ProductManager{
             }
         }
     }
-    List<Product> getAllProducts() {
+    public List<Product> getAllProducts() {
         return products;
     }
-    List<Product> getLowRatedProducts() {
+    public List<Product> getLowRatedProducts() {
         List<Product> lowRatedProducts = new ArrayList<>();
         for (Product product : products) {
             if (product.getRating() < 3.0) {

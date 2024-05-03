@@ -9,25 +9,25 @@ public class Product {
         this.name = name;
         this.category = category;
     }
-    int getId(){
+    public int getId(){
         return id;
     }
-    String getName(){
+    public String getName(){
         return name;
     }
-    String getCategory(){
+    public String getCategory(){
         return category;
     }
-    double getRating(){
+    public double getRating(){
         return rating;
     }
-    void setRating(double rating){
+    public void setRating(double rating){
         this.rating = rating;
     }
-    void setName(String name){
+    public void setName(String name){
         this.name = name;
     }
-    void setCategory(String category){
+    public void setCategory(String category){
         this.category = category;
     }
 
