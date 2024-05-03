@@ -10,7 +10,7 @@ public class Main {
         productManager.addProduct(new Product(1, "Laptop", "Electronics"));
         productManager.addProduct(new Product(2, "Smartphone", "Electronics"));
         productManager.addProduct(new Product(3, "Headphones", "Electronics"));
-
+        
         // Manager modifies the rating of a product
         productManager.modifyRating(1, 4.5); // Set Laptop's rating to 4.5
 
