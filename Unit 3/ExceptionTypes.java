@@ -5,7 +5,11 @@
 // 3. Error
 
 // Checked Exception: The classes which are direct child classes of Throwable class except RuntimeException and Error are called checked exceptions. These are checked at compile time.
+// Examples: IOException, SQLException, ClassNotFoundException, etc.
+
 // Unchecked Exception: The classes which are direct child classes of RuntimeException are called unchecked exceptions. These are checked at runtime.
+// Examples: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException, etc.
+
 // Error: The classes which are direct child classes of Error are called errors. These are also checked at runtime.
 
 public class ExceptionTypes
