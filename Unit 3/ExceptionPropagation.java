@@ -9,13 +9,11 @@ public class ExceptionPropagation {
         } catch (Exception e) {
             System.out.println("Exception handled");
         }
-
     }
 
     static void m1() {
         m2();
     }
-
     static void m2() {
         m3();
     }
@@ -24,6 +22,11 @@ public class ExceptionPropagation {
         int a = 10;
         int b = 0;
         int c = a / b;
-        System.out.println("Result: " + c);
+        try{
+            System.out.println("Result: " + c);
+        }
+        catch(Exception e){
+            System.out.println("Hello");
+        }
     }
 }
