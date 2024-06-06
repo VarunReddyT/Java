@@ -5,7 +5,7 @@ public class IllegalArgument {
         int age = s.nextInt();
 
         if(age<0){
-            throw new IllegalArgumentException();
+            throw new AgeException();
         }
     }
 }
