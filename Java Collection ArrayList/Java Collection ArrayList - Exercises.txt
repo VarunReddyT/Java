@@ -1,0 +1,87 @@
+Java Collection : ArrayList - Exercises
+---------------------------------------
+1. Write a Java program to create a new array list, add some elements (string) and print out the collection
+
+2. Write a Java program to insert an element into the array list at the first position
+
+3. Write a Java program to remove the fifth element from a array list
+
+4. Write a Java program to sort a given array list
+ 
+5. Write a Java program to shuffle elements in a array list
+
+6. Write a Java program to increase the size of an array list
+
+7. Write a Java program to reverse elements in a array list
+
+8. Write a Java program to compare two array lists
+
+9. Write a Java program to swap two elements in an array list
+
+10. Write a Java program to join two array lists
+
+11. Write a Java program to empty an array list
+
+12. Write a Java program to retrieve an element (at a specified index) from a given array list
+
+13. Write a Java program to update specific array element by given element
+ 
+14. Write a Java program to search an element in a array list
+ 
+15. Write a Java program to copy one array list into another
+ 
+16. Write a Java program to extract a portion of a array list
+ 
+17. Write a Java program to clone an array list to another array list
+
+18. Write a Java program to test an array list is empty or not
+ 
+19. Write a Java program to trim the capacity of an array list the current list size
+ 
+20. Write a Java program to print all the elements of a Array List using the position of the elements
+
+21. Write a Java program to Find maximum element in ArrayList
+
+22. Write a Java program to Find minimum element in ArrayList
+
+23. Write a Java program to ArrayList of user defined objects
+
+24. Write a Java program to Searching for elements in an ArrayList
+
+25. Write a Java program how do you find the number of elements present in an ArrayList
+
+26. Write a Java program how do you decrease the current capacity of an ArrayList to the current size
+
+27. Write a Java program how to Convert a ArrayList to HashSet
+
+28. Write a Java Program to find number of elements in ArrayList
+ 
+29. Write a Java program to get SubList from ArrayList
+ 
+30. Write a Java program to Remove Duplicates from ArrayList
+ 
+31. Write a Java program to Convert an ArrayList to Array
+ 
+32. Write a Java program to insert an element at a particular position of an ArrayList
+ 
+33. Write a Java program to Remove an element from a particular position of an ArrayList
+ 
+34. Write a Java program to Remove the given element from an ArrayList
+
+35. Write a Java program to Remove all elements of an ArrayList at a time
+
+36. Write a Java program to Insert more than one element at a particular position of an ArrayList
+ 
+37. Write a Java program to Retrieve a portion of an ArrayList
+
+38. Write a Java program to Replace a particular element in an ArrayList with the given element
+
+39. Write a Java program to get the position of a particular element in an ArrayList
+
+40. Write a Java program to check whether the given element is present in an ArrayList or not
+
+ 
+
+
+
+
