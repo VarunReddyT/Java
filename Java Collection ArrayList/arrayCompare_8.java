@@ -1,7 +1,6 @@
 // 8. Write a Java program to compare two array lists
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class arrayCompare_8 {
     public static void main(String[] args) {

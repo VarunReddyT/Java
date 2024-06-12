@@ -1,7 +1,6 @@
 // 10. Write a Java program to join two array lists
 
 import java.util.ArrayList;
-import java.util.Collections;
 public class arrayJoin_10 {
     public static void main(String[] args) {
         ArrayList<Integer> list1 = new ArrayList<>();
