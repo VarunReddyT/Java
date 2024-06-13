@@ -19,6 +19,5 @@ public class arrayTrim_19 {
         System.out.println("New list: " + list);
         System.out.println("New list size: " + list.size());
 
-
     }
 }
