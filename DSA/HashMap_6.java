@@ -11,5 +11,12 @@ public class HashMap_6 {
             String value = entry.getValue();
             System.out.println(key + " " + value);
         }
+        for(Integer key : map.keySet()){
+            System.out.println(key);
+        }
+        for(String value : map.values()){
+            System.out.println(value);
+        }
+        
     }
 }   
