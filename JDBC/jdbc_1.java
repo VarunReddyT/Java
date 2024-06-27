@@ -15,8 +15,7 @@ import java.sql.*;
 public class jdbc_1 {
     public static void main(String args[]){
         try {
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/employee", "root", "Tvkreddy@2014");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee", "root", "Tvkreddy@2014");
                     
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from emp");
