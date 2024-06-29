@@ -40,9 +40,9 @@ public class jdbcInsert_3 {
             }
             rs4.close();
 
-            ResultSet rs5 = stmt.executeQuery("select * from smartphones order by FinalPrice");
+            ResultSet rs5 = stmt.executeQuery("select Smartphone, FinalPrice from smartphones order by FinalPrice");
             while(rs5.next()){
-                System.out.println(rs5.getString(2));
+                System.out.println(rs5.getString(1) + " " + rs5.getString(2));
             }
             rs5.close();
             con.close();
