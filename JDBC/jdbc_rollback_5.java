@@ -7,15 +7,14 @@ public class jdbc_rollback_5 {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/operations", "root","Tvkreddy@2014");
             con.setAutoCommit(false);
 
-            // Inserting a record
             String insertSQL = "INSERT INTO Students (FirstName,LastName,Gender,DateOfBirth,Email,PhoneNumber,Address,City,State,ZipCode,EnrollmentDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = con.prepareStatement(insertSQL);
 
-            pstmt.setString(1, "Varun");
+            pstmt.setString(1, "Charan");
             pstmt.setString(2, "Reddy");
             pstmt.setString(3, "M");
-            pstmt.setDate(4, Date.valueOf("2004-09-01"));
-            pstmt.setString(5, "tvarun@gmail.com");
+            pstmt.setDate(4, Date.valueOf("2005-10-01"));
+            pstmt.setString(5, "charan@gmail.com");
             pstmt.setString(6, "1234567890");
             pstmt.setString(7, "Narayanguda");
             pstmt.setString(8, "Hyderabad");
@@ -27,17 +26,15 @@ public class jdbc_rollback_5 {
 
             pstmt.close();
             
-            // Savepoint
             Savepoint savepoint = con.setSavepoint();
 
-            // Deleting a record
-            
+
             String deleteSQL = "DELETE FROM Students WHERE StudentID = ?";
             pstmt = con.prepareStatement(deleteSQL);
-            pstmt.setInt(1, 2);
+            pstmt.setInt(1, 4);
             pstmt.executeUpdate();
             
-            // Rollback
+
             con.rollback(savepoint);
 
             con.commit();
