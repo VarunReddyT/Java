@@ -20,3 +20,5 @@ public class intro extends Thread{
         t1.start();
     }
 }
+
+// When you call t1.start(), JVM creates a new thread and then calls the thread's run() method.
