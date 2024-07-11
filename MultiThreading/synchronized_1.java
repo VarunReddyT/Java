@@ -10,5 +10,6 @@ public class synchronized_1 extends Thread {
         Thread t2 = new Thread(s);
         t1.start();
         t2.start();
+        System.out.println("Hello");
     }
 }
