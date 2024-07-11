@@ -3,7 +3,7 @@
 
 // ! Money also needs to be synchronized
 
-public class ticket_booking_synchronized {
+public class ticket_booking_synchronized extends Thread{
     int total_seats = 9;
     synchronized void book_ticket(int seats){
         if(total_seats >= seats){
