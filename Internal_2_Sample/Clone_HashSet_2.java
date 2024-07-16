@@ -11,8 +11,8 @@ public class Clone_HashSet_2 {
 
         System.out.println("First HashSet: " + hashset1);
 
-        HashSet<String> hashset2 = (HashSet<String>) hashset1.clone();
-        System.out.println("Cloned HashSet: " + hashset2);
+        // HashSet<String> hashset2 = (HashSet<String>) hashset1.clone();
+        // System.out.println("Cloned HashSet: " + hashset2);
 
     }
 }
