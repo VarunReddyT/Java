@@ -1,7 +1,4 @@
-package IOStreams;
-
 import java.io.*;
-import java.util.*;
 
 class DataInpStream {
     public static void main(String[] args) throws IOException {
