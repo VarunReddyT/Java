@@ -1,0 +1,30 @@
+What is Hashmap in Java?
+
+-->A HashMap basically designates unique keys to corresponding values that can be retrieved at any given point. 
+
+--->Working with HashMap in Java 
+
+Features of Java Hashmap
+
+a) The values can be stored in a map by forming a key-value pair. 
+     The value can be retrieved using the key by passing it to the correct method.
+
+b) If no element exists in the Map, it will throw a ‘NoSuchElementException’.
+
+c) HashMap stores only object references. 
+    That is why, it is impossible to use primitive data types like double or int.
+    Use wrapper class (like Integer or Double) instead.
+
+
+-->Using HashMaps in Java Programs:
+
+      Following are the two ways to declare a Hash Map:
+
+    1.      HashMap<String, Object> map = new HashMap<String, Object>();
+
+     2.     HashMap x  = new HashMap();
+
+-->Important Hashmap Methods 
+
+	-->get(Object KEY) – This will return the value associated with a specified key in this Java hashmap.
+	-->put(Object KEY, String VALUE) – This method stores the specified value and associates it with the specified key in this map.

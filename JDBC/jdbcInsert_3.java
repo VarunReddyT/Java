@@ -10,7 +10,8 @@ import java.sql.*;
 public class jdbcInsert_3 {
     public static void main(String[] args) {
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartphonesDB", "root", "Tvkreddy@2014");
+            Dotenv dotenv = new Dotenv(".env");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartphonesDB", "root", dotenv.get("MYSQL_PASSWORD"));
             Statement stmt = con.createStatement();
 
             ResultSet rs = stmt.executeQuery("select count(Smartphone) from smartphones where Brand = 'Apple'");

@@ -1,0 +1,12 @@
+StringTest: to take string inputs from user and initialize string varaiables
+String1: Comparing 2 strings by using compareTo() and compareToIgnoreCase() and concat(), hashCode()
+String2: String compare by equals() and == operator
+String3: Searching last occurance of a substring in a given String and
+	To search a word inside a string
+String4: To remove a particular character from a string
+String5: To replace a substring
+String6: To reverse a String using StringBuffer Class
+String7: to reverse a String using character array
+String8: splits a string into a number of substrings with the help of str split(string) method
+String9: String case conversion
+String10: Char array to string string to char array

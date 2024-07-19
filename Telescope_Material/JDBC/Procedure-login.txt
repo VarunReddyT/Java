@@ -1,0 +1,18 @@
+DELIMITER &&  
+CREATE PROCEDURE INSERTR (IN username VARCHAR(255),IN password INT)  
+BEGIN  
+    insert into login values(username,password);  
+END &&  
+DELIMITER ;  
+
+
+
+
+DELIMITER //
+CREATE PROCEDURE getPassword(
+        IN uname VARCHAR(20),
+        OUT pw INTEGER)
+BEGIN
+        SELECT password INTO pw FROM login where username=uname;
+END //
+

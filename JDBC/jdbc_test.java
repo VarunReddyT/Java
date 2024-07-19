@@ -55,8 +55,9 @@ public class jdbc_test {
 
     public static void main(String[] args) throws IOException {
         try {
+            Dotenv dotenv = new Dotenv(".env");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaexam", "root",
-                    "Tvkreddy@2014");
+                    dotenv.get("MYSQL_PASSWORD"));
             Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
 
             // String createTableSQL = "CREATE TABLE IF NOT EXISTS customers ( id INT

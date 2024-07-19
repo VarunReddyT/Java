@@ -12,9 +12,9 @@ public class jdbc_doc_4{
         PreparedStatement checkStockStmt = null;
         PreparedStatement updateStockStmt = null;
         PreparedStatement insertOrderStmt = null;
-
+        Dotenv dotenv = new Dotenv(".env");
         try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/usersProducts", "root", "Tvkreddy@2014");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/usersProducts", "root", dotenv.get("MYSQL_PASSWORD"));
             con.setAutoCommit(false);
 
             int userid = 1;

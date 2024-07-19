@@ -1,0 +1,650 @@
+CLASS AND OBJECTS
+Q1)
+class Product{
+	double price;
+}
+class Test{
+ public void updatePrice(Product product, double price){
+	price =price * 2;
+	product.price = product.price + price;
+ }
+ public static void main(String[] args){
+	Product prt =new Product();
+	prt.price=200;
+	double newPrice =100;
+
+      Test t=new Test();
+      t.updatePrice(prt, newPrice);
+      System.out.println(prt.price+" : "+ newPrice);
+ }
+}
+Given: 
+A. 200.0 : 100.0 
+B. 400.0 : 200.0 
+C. 400.0 : 100.0 
+D. Compilation fails. 
+Ans: C
+
+Q2)
+Which statement best describes encapsulation?
+
+A. Encapsulation ensures that classes can be designed so that only certain fields and methods of an
+object are accessible from other objects.
+B. Encapsulation ensures that classes can be designed so that their methods are inheritable.
+C.Encapsulation ensures that classes can be designed with some fields and methods declared as
+abstract.
+D. Encapsulation ensures that classes can be designed so that if a method has an argument MyType
+x, any subclass of MyType can be passed to that method.
+
+Answer: A
+
+Q3)
+What is the output of this program?
+
+   class box 
+   {
+        int width;
+        int height;
+        int length;
+   } 
+    class mainclass 
+    {
+        public static void main(String args[]) 
+        {        
+            box obj = new box();
+            System.out.println(obj);
+        } 
+    }
+a) 0
+b) 1
+c) Runtime error
+d) classname@hashcode in hexadecimal form
+
+Answer: d
+
+Q4)
+class Test 
+{
+     	public static void main(String[] args) 
+	{
+		String s;
+		System.out.println(s);
+ 	}
+}
+a) null
+b) prints nothing
+c) compiles but will not run
+d) compilation fails
+
+
+Ans: d
+
+
+Q5)
+class Test 
+{
+	String s;
+     	public static void main(String[] args) 
+	{
+		System.out.println(new Test().s);
+	}
+}
+a) null
+b) prints nothing
+c) compiles but will not run
+d) compilation fails
+
+Ans: A
+
+
+CONTROL STATEMENTS
+Q6)
+Given the code Fragment:
+if(aVar++ < 10)
+{
+   System.out.println(aVar + " Hello World! ");
+}
+else
+{
+	System.out.println(aVar + " Hello Universe! ");
+}
+
+what is the result if the integer aVar is 9?
+A.10 Hello World!
+B. Hello Universe!
+C. Hello World!
+D. Compilation fails.
+Ans:  A
+
+
+Q7)Given 
+4.public static void main(String[] args){
+5.    boolean opt =true;
+6.     switch(opt){
+7.         case true:
+8.	          System.out.print("True"); 
+9.		  break;
+10.	default :
+11.	    System.out.print("***");
+12.     }
+13.     System.out.print("Done");
+14.}
+
+which modification enables the code fragment to print TrueDone?
+
+A.Replace line 5 With String opt = "true";
+    Replace line 7 with case "true":
+B. Replace line 5 with boolean opt = 1;
+     Replace line 7 with case 1
+C. At line 9, remove the break statement.
+D. Remove the default section.
+
+Answer: A
+
+
+Q8)
+public static void main(String[] args){
+    int num=5;
+	do{
+	      System.out.print(num-- +" ");
+	   }while(num==0);
+
+} }
+
+What is the result?
+A. 5 4 3 2 1 0
+B. 5 4 3 2 1
+C. 4 2 1
+D. 5
+E. Nothing is printed
+
+Answer: D
+
+Q9)
+What is the output of the following code snippet?
+3: boolean keepGoing = true;
+4: int result = 15, i = 10;
+5: do {
+6: i--;
+7: if(i==8) keepGoing = false;
+8: result -= 2;
+9: } while(keepGoing);
+10: System.out.println(result);
+A. 7
+B. 9
+C. 10
+D. 11
+E. 15
+F. The code will not compile because of line 8.
+
+ANS-D
+
+
+Q10)
+What is the output of the following code snippet?
+3: int count = 0;
+4: ROW_LOOP: for(int row = 1; row <=3; row++)
+5: for(int col = 1; col <=2 ; col++) {
+6: if(row * col % 2 == 0) continue ROW_LOOP;
+7: count++;
+8: }
+9: System.out.println(count);
+A. 1
+B. 2
+C. 3
+D. 4
+E. 6
+F. The code will not compile because of line 6.
+
+ANS-A
+
+Q11)
+What is the result of the following code snippet?
+3: final char a = 'A', d = 'D';
+4: char grade = 'B';
+5: switch(grade) {
+6: case a:
+7: case 'B': System.out.print("great");
+8: case 'C': System.out.print("good"); break;
+9: case d:
+10: case 'F': System.out.print("not good");
+11: }
+A. great
+B. greatgood
+C. The code will not compile because of line 3.
+D. The code will not compile because of line 6.
+E. The code will not compile because of lines 6 and 9.
+
+ANS-B
+
+Q12)
+What is the output of this program?
+
+    class main_class 
+    {
+        public static void main(String args[])
+        {
+            int x = 9;
+            if (x == 9) 
+            { 
+                int x = 8;
+                System.out.println(x);
+            }
+        } 
+    }
+a) 9
+b) 8
+c) Compilation error
+d) Runtime error
+
+Answer: c
+
+
+Q13)Given the code Fragment :
+3. public static void main(String[] args){
+4.       int x=5;
+5.	   while(isAvailable(x)){
+6.	   System.out.print(x);
+7.	   }
+8.    }
+9.	public static boolean isAvailable(int x){
+10.	    return x-- > 0? true : false;
+11.	}
+
+Which modification enables the code to print 54321?
+
+A.Replace line 6 with System.out. print (--x) ;
+B. in Line 7 place --x 
+C.Replace line 6 with --x; and, at line 7, insert system, out. print (x);
+D.Replace line 12 With return (x > 0) ? false: true;
+
+Answer: B
+
+Q14)
+What will be the output of the code snippet given below?  
+ public class Main
+{
+       public static void main ( String[   ] args )
+       {
+           boolean b ;
+           b = false ;
+          b = true ;
+          if ( b )
+          System.out.printin  (“This is executed,” ) ;
+         B = false ;
+        if ( b )
+        System.out.printin  (“This is not executed,” ) ;
+System.out.printin (10 > 9 ) ;
+       }
+}
+A.	This is not executed.
+False
+B.	This is executed.
+I
+C.	This is executed.
+True
+D.	This is not executed.
+0
+
+ANSWER: C
+
+
+Q15)
+class Test 
+{
+    public static void main(String [] args) 
+	{
+          		int a=10;
+		if(++a = 11)
+	 		System.out.println(a);
+		else
+	 		++a;
+	 	System.out.println(a);
+    	}
+}
+
+a)	10
+b)	11
+c)	12
+d)	Compilation fails
+e)	Run time exception
+
+Ans:  D
+
+Q16)	
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		short a=0;
+                           	for(;a<10;a++)
+		  a=a+6;
+      		System.out.println(a);
+	          
+	 }
+}
+
+a)	0
+b)	14
+c)	Compilation fails
+d)	Run time exception
+
+Ans:  C
+
+
+
+STRINGS
+Q17)
+public static void main(String[] args) 	{
+		StringBuilder sb=new StringBuilder(5);
+		String s=" ";
+		if(sb.equals(s)){
+		    System.out.println("Match 1");
+		 }
+		 else if(sb.toString().equals(s.toString() )){
+		    System.out.println("Match 2");
+		 }
+		 else{
+		    System.out.println("No Match");
+		 }
+	}
+
+A.Match 1
+B. Match 2
+C. No Match
+D. A NullPointerException is thrown at runtime.
+
+Ans: C
+
+Q18)
+class  Test{
+	public static void main(String[] args) 	{
+       String ta= "A ";
+	   ta=ta.concat("B ");
+	   String tb="C ";
+	  ta=ta.concat(tb);
+	  ta.replace('C','D');
+	  ta=ta.concat(tb);
+	  System.out.println(ta);
+	}
+}
+
+What is the result?
+A. A B C D
+B. A C D
+C. A B C C
+D. A B D
+E. A B D C
+
+Answer: C
+
+Q19)
+Given :
+String[][] chs=new String[2][];
+chs[0]=new String[2];
+chs[1]=new String[5];
+int i=97;
+ 
+    for(int a=0; a<chs.length;a++){
+		for(int b=0; b<chs.length;b++){
+			chs[a][b] = "" + i;
+		     i++;
+			 }
+	}
+	for(String[] ca: chs){
+	   for(String c:ca){
+	    System.out.print(c + " ");
+	   }
+	   System.out.println();
+	}
+	
+what is the result
+
+A. 97 98
+     99 100 null null null
+B. 97 98
+     99 100 101 102 103
+C. Compilation fails.
+D.A NullPointerException is thrown at runtime.
+E. An ArraylndexOutOfBoundsException is thrown at runtime.
+
+Answer: A
+
+
+ARRAYS
+Q20)
+ Given the code fragment:
+ int a[] ={1,2,3,4,5};
+ for(xx) {
+      System.out.print(a[e]);
+  }
+  which option can replace xx to enable the code to print 135?
+
+A. int e=0; e <= 4; e++
+B.  int e=0; e < 5; e+= 2
+C.  int e=1; e <= 5; e+= 1
+D.  int e=1; e<5; e+=2
+
+Answer: B
+
+Q21)
+Given the code fragment:
+
+String shirts[][] =new String[2][2];
+shirts[0][0] ="red";
+shirts[0][1] ="blue";
+shirts[1][0] ="small";
+shirts[1][1] ="medium";
+
+which code fragment prints red: blue: small: medium?
+
+a) for(int index =1; index<2; index++)
+		for(int idx=1; idx<2;idx++)
+		    System.out.println(shirts[index][idx]+ ": ");
+b) for(int index =0; index<2; ++index)
+		for(int idx=0; idx<index;++idx)
+		    System.out.println(shirts[index][idx]+ ": ");
+c)  for(int index =0; index<2; ++index)
+		for(int idx=0; idx<index;idx)
+		    System.out.println(shirts[index][idx]+ ": ");
+
+d) for(int index =0; index<2; ){
+		for(int idx=0; idx<2;){
+		    System.out.print(shirts[index][idx]+ ": ");
+	        idx++;
+	  }
+	index++;
+  }
+
+A. Option A
+B. Option B
+C. Option C
+D. Option D
+
+
+Answer: D
+
+Q22) 
+import java.util.*;
+class Test {
+	public static void main(String[] args) 	{
+		int[][] arr=new int[0][4];
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<arr.length;i++)
+			for (int j=0;j<arr[i].length ;j++ )
+			{
+        	        arr[i][j]=sc.nextInt();
+			}
+
+		for(int i=0;i<arr.length;i++)
+			for (int j=0;j<arr[i].length ;j++ )
+			{
+        	       System.out.println(arr[i][j]);
+			}
+		
+	}
+}
+
+a) read 4 elements and print those 4 elements
+b) read 4 elements but  print all elements as 0.
+c) compilation fails
+d) no output
+
+Ans: D
+
+Q23) 
+import java.util.*;
+class Test {
+	public static void main(String[] args) 	{
+		int[][] arr={{2,3,4},{1,0},{5,6,7,8}};
+        	System.out.println(arr[1][1]);
+	}
+}
+
+a) 2
+b) 3
+c) 1
+d) 0
+e) compilation fails
+f) null pointer exception
+
+
+Ans: d
+
+
+OPERATORS 
+
+Q24) Given the code fragment:
+
+int x= 100;
+int a= x++;
+int b= ++x;
+int c= x++;
+int d =(a<b) ? (a<c) ? a: (b<c)? b:c;
+System.out.println(d);
+
+A.100
+B. 101
+C. 102
+D. 103
+E. Compilation fails
+
+Answer: E
+
+Q25)
+What data type (or types) will allow the following code snippet to compile? (Choose all that
+apply)
+byte x = 5;
+byte y = 10;
+_____ z = x + y;
+A. int
+B. long
+C. boolean
+D. double
+E. short
+F. byte
+
+ans- A B D
+
+Q26)
+What change would allow the following code snippet to compile? (Choose all that apply)
+3: long x = 10;
+4: int y = 2 * x;
+A. No change; it compiles as is.
+B. Cast x on line 4 to int.
+C. Change the data type of x on line 3 to short.
+D. Cast 2 * x on line 4 to int.
+E. Change the data type of y on line 4 to short.
+F. Change the data type of y on line 4 to long.
+
+ANS- B C D F
+
+
+Q27)
+What is the output of the following code snippet?
+3: boolean x = true, z = true;
+4: int y = 20;
+5: x = (y != 10) ^ (z=false);
+6: System.out.println(x+", "+y+", "+z);
+A. true, 10, true
+B. true, 20, false
+C. false, 20, true
+D. false, 20, false
+E. false, 20, true
+F. The code will not compile because of line 5.
+
+ans- B
+
+
+Q28)
+What is the output of the following code?
+1: public class ArithmeticSample {
+2: public static void main(String[] args) {
+3: int x = 5 * 4 % 3;
+4: System.out.println(x);
+5: }}
+A. 2
+B. 3
+C. 5
+D. 6
+E. The code will not compile because of line 3.
+
+ANS-A
+
+Q29)
+class Test
+{
+	public static void main(String[] args) 
+	{
+            		byte a=3;
+		int b=10;
+		float c=100.1f;
+		byte d;
+		d=b+a;			//Line-7
+		b= (int)a;  			// Line-8
+		a+=7;       			// Line-9
+     		System.out.println(d);   	//Line-10
+     		System.out.println(b);  	// Line-11 
+    		System.out.println(a);	//Line-12
+	}
+ }
+
+a) Compilation fails at line 7
+b) Compilation fails at line 8
+c) Compilation fails at line 9
+d) Compilation fails at line 10
+e) Compilation fails at line 11
+f) Compilation fails at line 12
+g) Compilation succeeds
+
+Ans: A
+
+Q30)	
+class Test
+{
+   	public static void main(String[] args) 
+	{
+	   float f=23.11f;
+	   short s=(short)f;
+	   System.out.println(s);
+	}
+}
+a) 0
+b) 23
+c) 23.0
+d) Compilation fails
+
+Ans:   b
+
+Q31)
+What is the output of the following code snippet?
+3: int x1 = 50, x2 = 75;
+4: boolean b = x1 >= x2;
+5: if(b = true) System.out.println("Success");
+6: else System.out.println("Failure");
+A. Success
+B. Failure
+C. The code will not compile because of line 4.
+D. The code will not compile because of line 5.
+
+ANS-A

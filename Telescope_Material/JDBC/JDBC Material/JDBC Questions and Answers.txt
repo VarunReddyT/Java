@@ -1,0 +1,155 @@
+To Create a database named vignan:
+-----------------------------------------------
+mysql>create database vignan;
+
+to move into database vignan:
+---------------------------------------
+mysql> use vignan;
+
+to create a table name Employee:
+-------------------------------------------
+mysql> create table Employee(eid int primary key, name varchar(40), designation varchar(40), salary int);
+
+
+Before you run any program make sure that your classpath environment variable conatins the following file: ------------------------------------------------------------------------------------------------------------------------
+mysql-connector-java-5.1.48-bin.jar;
+
+put the path(the file can be at any location) of the above file in the class path
+
+C:\Program Files\Apache Software Foundation\Tomcat 8.5\lib\mysql-connector-java-5.1.48-bin.jar;
+
+
+Q1)Write a java program to insert a record in the Employee table.
+
+Answer:
+-----------
+import   java.sql.*;
+class Ex1  
+{
+public static void main(String args[])  throws Exception
+{
+Connection  con;
+Statement  st;
+Class.forName("com.mysql.jdbc.Driver"); 
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/vignan","root","shiva");
+st=con.createStatement();
+int i=st.executeUpdate("insert into Employee values(2,'Kiran','Assoc.Professor',75000)");
+System.out.println("No.of records inserted="+i);
+st.close();
+con.close();
+}
+}
+
+NOTE:
+---------
+Alternate to load driver class in the memory :
+----------------------------------------------------------
+DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+Alternate to connect to mysql to avoid warnings for SSL Security:
+-------------------------------------------------------------------------------------
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/vignan?autoReconnect=true&useSSL=false","root","shiva");		
+
+
+Q2)Write a java program to update the salary of the employee for the given employee id.
+
+Answer:
+----------
+import java.sql.*;
+import java.util.*;
+class Ex2  
+{
+public static void main(String args[])  throws Exception
+{
+Connection  con;
+PreparedStatement  pst;
+Scanner sc=new Scanner(System.in);
+Class.forName("com.mysql.jdbc.Driver");
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/vignan","root","shiva");
+pst=con.prepareStatement("update Employee set salary=? where eid=?");
+System.out.println("Enter Employee id:");
+int id=sc.nextInt();
+System.out.println("Enter new Salray:");
+int sal=sc.nextInt(); 
+pst.setInt(1,sal);
+pst.setInt(2,id);
+int i=pst.executeUpdate();
+System.out.println("No.of records updated="+i);
+pst.close();
+con.close();
+}
+}
+
+
+Q3) Write a java program to retrieve all the records from Employee table and display on the console.
+
+Solution:
+-----------
+import   java.sql.*;
+class Ex3  
+{
+public static void main(String args[])  throws Exception
+{
+Connection  con;
+Statement  st;
+ResultSet rs;
+Class.forName("com.mysql.jdbc.Driver"); 
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/vignan","root","shiva");
+st=con.createStatement();
+rs=st.executeQuery("select * from Employee");
+while(rs.next())
+{
+    System.out.print(rs.getInt("eid")+"  ");
+    System.out.print(rs.getString("name")+ "  ");
+    System.out.print(rs.getString("designation")+"  ");
+    System.out.println(rs.getInt("salary"));
+}
+rs.close();
+st.close();
+con.close();
+}
+}
+
+
+to create a table name login:
+-------------------------------------
+mysql> create table login(username varchar(40) primary key, password varchar(40));
+
+to insert 3 recors:
+------------------------
+mysql> insert into login values('user1','pwd1');
+mysql> insert into login values('user2','pwd2');
+mysql> insert into login values('user3','pwd3');
+
+
+Q4) Write a java program to chek whether the user with given username and password is a valid user or invalid user.
+
+Answer:
+---------
+import java.sql.*;
+import java.util.*;
+class Ex4  
+{
+public static void main(String args[])  throws Exception
+{
+Connection  con;
+PreparedStatement  pst;
+Scanner sc=new Scanner(System.in);
+Class.forName("com.mysql.jdbc.Driver");
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306/vignan","root","shiva");
+pst=con.prepareStatement("select * from login where username=? and password=?");
+System.out.println("Enter UserName:");
+String u=sc.next();
+System.out.println("Enter Password:");
+String p=sc.next(); 
+pst.setString(1,u);
+pst.setString(2,p);
+ResultSet  rs=pst.executeQuery();
+if(rs.next())
+System.out.println("Valid User");
+else
+System.out.println("InValid User");
+rs.close();
+pst.close();
+con.close();
+}
+}

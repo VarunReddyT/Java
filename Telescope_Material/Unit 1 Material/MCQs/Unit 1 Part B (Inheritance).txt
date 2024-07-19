@@ -1,0 +1,368 @@
+1. Which of this keyword must be used to inherit a class?
+a) super
+b) this
+c) extent
+d) extends
+Answer: d
+
+2. A class member declared protected becomes a member of subclass of which type?
+a) public member
+b) private member
+c) protected member
+d) static member
+Answer: b
+Explanation: A class member declared protected becomes a private member of subclass.
+
+3. Which of these is correct way of inheriting class A by class B?
+a) class B + class A {}
+b) class B inherits class A {}
+c) class B extends A {}
+d) class B extends class A {}
+Answer: c
+
+4. What will be the output of the following Java program?
+
+    class A 
+    {
+        int i;
+        void display() 
+        {
+            System.out.println(i);
+        }
+    }    
+    class B extends A 
+    {
+        int j;
+        void display() 
+        {
+            System.out.println(j);
+        }
+    }    
+    class inheritance_demo 
+    {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            obj.i=1;
+            obj.j=2;   
+            obj.display();     
+        }
+   }
+a) 0
+b) 1
+c) 2
+d) Compilation Error
+Answer: c
+Explanation: Class A & class B both contain display() method, class B inherits class A, when display() method is called by object of class B, display() method of class B is executed rather than that of Class A.
+output:
+$ javac inheritance_demo.java 
+$ java inheritance_demo 
+2
+
+5. What will be the output of the following Java program?
+
+    class A 
+    {
+        int i;
+    }    
+    class B extends A 
+    {
+        int j;
+        void display() 
+        {
+            super.i = j + 1;
+            System.out.println(j + " " + i);
+        }
+    }    
+    class inheritance 
+    {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            obj.i=1;
+            obj.j=2;   
+            obj.display();     
+        }
+   }
+a) 2 2
+b) 3 3
+c) 2 3
+d) 3 2
+
+Answer: c
+Explanation: None
+output:
+$ javac inheritance.java
+$ java inheritance
+2 3
+
+6. Using which of the following, multiple inheritance in Java can be implemented?
+a) Interfaces
+b) Multithreading
+c) Protected methods
+d) Private methods
+Answer: a
+Explanation: Multiple inheritance in java is implemented using interfaces. Multiple interfaces can be implemented by a class.
+
+7. All classes in Java are inherited from which class?
+a) java.lang.class
+b) java.class.inherited
+c) java.class.object
+d) java.lang.Object
+Answer: d
+Explanation: All classes in java are inherited from Object class. Interfaces are not inherited from Object Class.
+
+8. In order to restrict a variable of a class from inheriting to subclass, how variable should be declared?
+a) Protected
+b) Private
+c) Public
+d) Static
+Answer: b
+Explanation: By declaring variable private, the variable will not be available in inherited to subclass.
+
+9. If super class and subclass have same variable name, which keyword should be used to use super class?
+a) super
+b) this
+c) upper
+d) classname
+Answer: a
+Explanation: Super keyword is used to access hidden super class variable in subclass.
+
+10. If a class inheriting an abstract class does not define all of its function then it will be known as?
+a) Abstract
+b) A simple class
+c) Static class
+d) None of the mentioned
+Answer: a
+Explanation: Any subclass of an abstract class must either implement all of the abstract method in the superclass or be itself declared abstract.
+
+11. What will be the output of the following Java code?
+
+    class A 
+    {
+        public int i;
+        public int j;
+        A() 
+       {
+            i = 1;
+            j = 2;
+	}
+    }    
+    class B extends A 
+    {
+        int a;
+	B() 
+        {
+            super();
+        } 
+    }    
+    class super_use 
+    {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            System.out.println(obj.i + " " + obj.j)     
+        }
+   }
+a) 1 2
+b) 2 1
+c) Runtime Error
+d) Compilation Error
+Answer: a
+Explanation: Keyword super is used to call constructor of class A by constructor of class B. Constructor of a initializes i & j to 1 & 2 respectively.
+output:
+$ javac super_use.java
+$ java super_use
+1 2
+
+12. Which among the following best describes polymorphism?
+a) It is the ability for a message/data to be processed in more than one form
+b) It is the ability for a message/data to be processed in only 1 form
+c) It is the ability for many messages/data to be processed in one way
+d) It is the ability for undefined message/data to be processed in at least one way
+Answer: a
+Explanation: It is actually the ability for a message / data to be processed in more than one form. The word polymorphism indicates many-forms. So if a single entity takes more than one form, it is known as polymorphism.
+
+13. Which among the following can’t be used for polymorphism?
+a) Static member functions
+b) Member functions overloading
+c) Predefined operator overloading
+d) Constructor overloading
+Answer: a
+Explanation: Static member functions are not property of any object. Hence it can’t be considered for overloading/overriding. For polymorphism, function must be property of object, not only of class.
+
+14) What concepts come under Polymorphism in java?
+
+a)Method overloading
+b)Constructor overloading
+c)Method overriding
+d)All the above
+Answer: D
+
+15) Which polymorphism behavior do you see in below class?
+
+class Paint {
+	// all methods have same name
+	public void Color(int x) {
+	}
+
+	public void Color(int x, int y) {
+	}
+
+	public void Color(int x, int y, int z) {
+	}
+}
+a)Method overloading
+b)Constructor overloading
+c)Method overriding
+d)Run time polymorphism
+Answer: A
+
+16) Which feature comes under compile time polymorphism?
+
+a)Method overloading
+b)Constructor overloading
+c)Method overriding
+d)Both A and B
+e)Both A and C
+Answer: D
+Method overloading, and constructor overloading come under compile time polymorphism. as compiler resolves overloaded method at compile time. in simple word, compiler can understand which overloaded method or constructor to call at compile time itself.
+
+17) Which is runtime polymorphism in java oops?
+a)Method overloading
+b)Method overriding
+c)Constructor overloading
+d)None
+Answer: B
+
+18) Which method of base class X, the derived class Y cannot override?
+class X {
+	final public void m1() {
+	}
+
+	public void m2() {
+	}
+}
+class Y extends X {
+	// override?
+}
+a)m1()
+b)m2()
+c)Both m1() and m2() can override
+d)No method can override
+Answer: A
+Explanation: Derive class Y cannot Override base class method m1() as this method is declared as final.
+
+19) Which are true statements regarding polymorphism concept?
+
+a)Method overloading is used in same class only
+b)Constructor overloading is used in same class only
+c)Method overriding is used in base class and derived class
+d)All
+
+Answer: D
+
+20) Advantage of inheritance in java programming is/are
+a)Code Re-usability
+b)Class Extendibility
+c)Save development time
+d)All
+
+Answer: D
+
+21) Which class cannot be sub classed?
+a)final class
+b)object class
+c)abstract class
+d)child class
+
+Answer: A
+
+22) Which cannot be inherited from a base class in Java programming
+a)Constructor
+b)final method
+c)Both
+d)None
+Answer: A
+Constructor of a class cannot be inherited. But note that they can be invoked from a derived class. final method can be inherited just they cannot be overridden in sub class.
+
+23) Java inheritance is used
+a)for code re-usability
+b)to achieve runtime polymorphism
+c)Both of the above
+d)None
+
+Answer: C
+
+24) The functionality of multiple inheritance can be implemented in Java by
+I. Extending one class and implementing multiple interfaces.
+II.Implementing multiple interfaces.
+III.Extending multiple classes and interfaces.
+IV. Extending multiple classes and one interface
+
+a)Only I
+b)Only III
+c)I & II
+d)II & III
+Answer: C
+
+25) A java interface can contain ————
+
+a)public static Final Variables only
+b)public Abstract methods
+c)Abstract methods(unimplemented) and implemented methods both
+d)public static Final Variables and abstract methods both
+
+Answer: D
+An interface can have both final variables and abstract methods.
+
+26) Which one is correct declaration for implementing two interfaces?
+Consider, Interface A and B.  class C wants to implements both interfaces.
+
+a)class C implements A, B
+b)class C implements A, implements B
+c)class C implements A extends B
+View Answer
+Answer: A
+
+27) The two or more classes serve as base class for a derived class, then this situation is called .
+A. Polymorphism
+B. multiple inheritance
+C. encapsulation
+D. none of these
+
+Answer - 
+B
+
+28) Which of the following definition is incorrect for polymorphism?
+
+a)Polymorphism helps in redefining the same functionality
+b)Polymorphism concept is the feature of object-oriented programming (OOP)
+c)It always increases the overhead of function definition
+d)Ease in the readability of the program
+Answer: c. 
+
+29)In below java program, the class Circle implements the interface Shape. Which polymorphism concept has been applied here?
+
+interface Shape {
+	void area();
+}
+
+class Circle implements Shape {
+
+	public void area() {
+
+	}
+}
+a)Method overloading
+b)Method overriding
+c)No polymorphism
+View Answer
+Answer: B
+
+30) Which of the following are available only in the class hierarchy chain?
+A. Public data members
+B. Private data members
+C. Protected data members
+D. Member functions
+Answer:C

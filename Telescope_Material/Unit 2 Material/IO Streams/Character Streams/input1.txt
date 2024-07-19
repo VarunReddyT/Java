@@ -1,0 +1,1 @@
+character streams are only for handling only text data.

@@ -1,2 +1,4 @@
 *.class
 .vscode
+*.env
+*Dotenv.java

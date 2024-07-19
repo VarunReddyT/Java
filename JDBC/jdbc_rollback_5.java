@@ -4,7 +4,8 @@ import java.sql.*;
 public class jdbc_rollback_5 {
     public static void main(String[] args) throws SQLException{
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/operations", "root","Tvkreddy@2014");
+            Dotenv dotenv = new Dotenv(".env");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/operations", "root",dotenv.get("MYSQL_PASSWORD"));
             con.setAutoCommit(false);
 
             String insertSQL = "INSERT INTO Students (FirstName,LastName,Gender,DateOfBirth,Email,PhoneNumber,Address,City,State,ZipCode,EnrollmentDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

@@ -5,9 +5,9 @@ public class JdbcInsert_2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("smartphones.csv"));
         String line;
-
+        Dotenv dotenv = new Dotenv(".env");
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartphonesDB", "root", "Tvkreddy@2014");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartphonesDB", "root", dotenv.get("MYSQL_PASSWORD"));
             Statement stmt = con.createStatement();
 
             String createTableSQL = "CREATE TABLE IF NOT EXISTS smartphones (SmartphoneId INT NOT NULL AUTO_INCREMENT, Smartphone VARCHAR(255) , Brand VARCHAR(40) , Model VARCHAR(40) , RAM INT , Storage INT , Color VARCHAR(40) , Free BOOLEAN, FinalPrice DOUBLE , PRIMARY KEY (SmartphoneId) )";

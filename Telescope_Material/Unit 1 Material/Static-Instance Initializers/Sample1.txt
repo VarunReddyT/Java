@@ -1,0 +1,16 @@
+class Sample1
+{
+	static
+	{
+		System.out.println("In Static block");
+		System.out.println("static block x="+x);
+
+	}
+	static int x=10;
+		
+    	public static void main(String args[])
+	{
+		//System.out.println("In main method");
+	}
+}
+ 
