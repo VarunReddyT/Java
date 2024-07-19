@@ -4,7 +4,8 @@ import java.sql.*;
 public class JDBC_Table_15 {
     public static void main(String[] args) {
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaexam", "root", "Tvkreddy@2014");
+            Dotenv dotenv = new Dotenv(".env");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaexam", "root", dotenv.get("MYSQL_PASSWORD"));
             Statement stmt = con.createStatement();
 
             stmt.executeUpdate("create table if not exists contacts(id INT, name VARCHAR(40), phone_number VARCHAR(20), email VARCHAR(30))");

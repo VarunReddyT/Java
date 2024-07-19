@@ -16,7 +16,8 @@ import java.sql.*;
 public class JDBC_Connect_6 {
     public static void main(String[] args) {
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaexam", "root", "Tvkreddy@2014");
+            Dotenv dotenv = new Dotenv(".env");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaexam", "root", dotenv.get("MYSQL_PASSWORD"));
             Statement stmt = con.createStatement();
             // Create table
             stmt.executeUpdate("create table if not exists Product(ProductID int, ProductName varchar(50), Price double, Quantity int)");
