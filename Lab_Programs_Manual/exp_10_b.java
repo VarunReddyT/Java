@@ -1,5 +1,4 @@
 // b. Demonstrate with a Java program(use JDBC) to display all the employees who are working in "Dallas" in ascending order of their names. 
-import java.util.*;
 import java.sql.*;
 public class exp_10_b {
     public static void main(String[] args) throws SQLException, ClassNotFoundException{

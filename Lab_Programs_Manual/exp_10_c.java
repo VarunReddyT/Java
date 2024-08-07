@@ -28,6 +28,7 @@ public class exp_10_c {
 
             pstmt.close();
             con.close();
+            sc.close();
         }
         catch(SQLException e){
             System.out.println(e);

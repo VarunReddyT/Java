@@ -43,5 +43,6 @@ public class exp_3_b {
             }
             System.out.println();
         }
+        sc.close();
     }
 }

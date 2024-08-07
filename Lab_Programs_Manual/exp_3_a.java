@@ -20,5 +20,6 @@ public class exp_3_a {
             }
         }
         System.out.println(max-min);
+        sc.close();
     }
 }

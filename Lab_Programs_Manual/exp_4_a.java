@@ -17,5 +17,6 @@ public class exp_4_a {
             }
         }
         System.out.println("Length of longest substring : " + longLen);
+        sc.close();
     }
 }
