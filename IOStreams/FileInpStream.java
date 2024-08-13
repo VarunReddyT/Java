@@ -5,13 +5,10 @@ class FileInpStream
    {
      int  ch;     
      FileInputStream   fis = new   FileInputStream("sample.txt");
-    while(true)
+    while((ch=fis.read())!=-1)
     {
-        ch=fis.read();
-        if(ch==-1)
-             break;
        System.out.print((char)ch+" ");
     }
     fis.close();
 }
-}
+} 

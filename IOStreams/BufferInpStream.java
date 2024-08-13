@@ -6,11 +6,8 @@ class BufferInpStream
      int ch;
      FileInputStream  fis= new  FileInputStream("sample.txt");
      BufferedInputStream   bis = new  BufferedInputStream(fis);
-    while(true)
+    while((ch=bis.read())!=-1)
     {
-        ch=bis.read();
-        if(ch==-1)
-             break;
        System.out.print((char)ch);
     }
     bis.close();
